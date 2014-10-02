@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+{% block css %}
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/default.css" rel="stylesheet">
+{% endblock %}
+{% block body %}
+    <div class="container text-center">
+        <div class="row clearfix">
+		<div class="col-md-12 column">
+			<div id="titulo" class="jumbotron">
+                <img class="img-responsive center-block" src="/static/img/hello-world.png">
+   			</div>
+			<div class="row clearfix">
+				<div class="col-md-6 column">
+					<h2 style="text-align: left">
+						JAVA
+					</h2>
+					<p>public class OlaMundo { </p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args) {</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Olá, Mundo!");</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+                    <p>}</p>
+				</div>
+				<div class="col-md-6 column">
+					<h2>
+						C
+					</h2>
+					<p> #include <stdio.h> </p>
+                    <p> int main(void) { </p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Olá, Mundo!"); </p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 0; </p>
+                    <p> } </p>
+				</div>
+			</div>
+		</div>
+	</div>
+    </div>
+{% endblock %}
