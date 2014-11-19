@@ -1,0 +1,51 @@
+{% extends 'lingAngulars/base.html' %}
+
+{% block js %}
+    <script type="text/javascript" src="/static/angular/js/angular.min.js"></script>
+    <script type="text/javascript" src="/static/lingAngular/js/lingAngular.js"></script>
+    <script type="text/javascript">
+        var linguagemapp=angular.module('linguagemapp',['linguagemmodulo']);
+
+        function linguagemcontroller($scope) {
+            $scope.mostrarformflag=true;
+
+            $scope.mostrarouesconderform=function(){
+                $scope.mostrarformflag=!$scope.mostrarformflag;
+            }
+         }
+
+    </script>
+
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" ng-app="linguagemapp" ng-controller="linguagemcontroller">
+                <h1>{% trans %}This is a generic home for lingAngular_app {% endtrans %}  </h1>
+                <button class="btn btn-success" ng-click="mostrarouesconderform">Nova Linguagem</button>
+                <hr/>
+                <linguagemform ng-show="mostrarformflag"></linguagemform>
+
+                {% if _logged_user and ('ADMIN' in _logged_user.groups) %}
+                <a href="{{ admin_path }}" class="btn btn-success">{% trans %}Admin{% endtrans %}</a>
+                {% endif %}
+                <hr/>
+                <h2>{% trans %}List of LingAngulars{% endtrans %}</h2>
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>{% trans %}Descricao{% endtrans %}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for ling_angular in ling_angulars %}
+                        <tr>
+                            <td>{{ ling_angular.descricao }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

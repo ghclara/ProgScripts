@@ -51,7 +51,8 @@
             <ul class="nav navbar-nav">
                 {% macro select_tab(tab='') %}
                     <li {{ 'class=active' if tab=='HELLOS' }}><a href="/codigo">{% trans %}Codigos{% endtrans %}</a></li>
-                    <li {{ 'class=active' if tab=='HELLOS' }}><a href="/cads">{% trans %}Cadastro de Hello World{% endtrans %}</a></li>
+                    <li {{ 'class=active' if tab=='HELLOS' }}><a href="/linguagems">{% trans %}Linguagem{% endtrans %}</a></li>
+                <li {{ 'class=active' if tab=='HELLOS' }}><a href="/lingAngulars">{% trans %}Linguagem Angular{% endtrans %}</a></li>
                     {% if _logged_user and 'ADMIN' in _logged_user.groups %}
                         <li {{ 'class=active' if tab=='ADMIN' }}><a href="/admin">{% trans %}Admin{% endtrans %}</a></li>
                     {% endif %}
